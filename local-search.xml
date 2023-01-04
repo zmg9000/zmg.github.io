@@ -4,6 +4,97 @@
   
   
   <entry>
+    <title>青龙短信对接</title>
+    <link href="/2023/01/04/MaiARK/"/>
+    <url>/2023/01/04/MaiARK/</url>
+    
+    <content type="html"><![CDATA[<h3 id="上述都是安装好了青龙的前提下，对接MaiARK"><a href="#上述都是安装好了青龙的前提下，对接MaiARK" class="headerlink" title="上述都是安装好了青龙的前提下，对接MaiARK"></a>上述都是安装好了青龙的前提下，对接MaiARK</h3><h4 id="一键安装docker版本MaiARK脚本"><a href="#一键安装docker版本MaiARK脚本" class="headerlink" title="一键安装docker版本MaiARK脚本"></a>一键安装docker版本MaiARK脚本</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">bash &lt;(curl -s -S -L https://maiark-1256973477.cos.ap-shanghai.myqcloud.com/kiss.sh)<br><br></code></pre></td></tr></table></figure><h4 id="青龙创建应用"><a href="#青龙创建应用" class="headerlink" title="青龙创建应用"></a>青龙创建应用</h4><p>登录青龙后，系统设置—-应用设置—新建应用（将权限全部选上）</p><p><img src="https://s2.loli.net/2023/01/04/Om5yZbQTvha6wzH.png" alt="微信图片_20230104232300.png"></p><h4 id="对接青龙"><a href="#对接青龙" class="headerlink" title="对接青龙"></a>对接青龙</h4><p><img src="https://s2.loli.net/2023/01/04/D9uhbOC73Qs6qpx.png" alt="微信截图_20230104232614.png"></p><p><img src="https://s2.loli.net/2023/01/04/dIspMj9bL37cmYZ.png" alt="微信截图_20230104232538.png"></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>qinglong安装教程</title>
+    <link href="/2023/01/04/qinglong/"/>
+    <url>/2023/01/04/qinglong/</url>
+    
+    <content type="html"><![CDATA[<h3 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h3><p><a href="https://www.i4k.xyz/article/weixin_52455100/119750516">https://www.i4k.xyz/article/weixin_52455100/119750516</a></p><h4 id="第一个安装docker"><a href="#第一个安装docker" class="headerlink" title="第一个安装docker"></a>第一个安装docker</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo yum check-update<br>curl -fsSL https://get.docker.com/ | sh<br>sudo systemctl start docker<br>sudo systemctl status docker<br>sudo systemctl <span class="hljs-built_in">enable</span> docker<br></code></pre></td></tr></table></figure><h4 id="第二步docker镜像并且启动"><a href="#第二步docker镜像并且启动" class="headerlink" title="第二步docker镜像并且启动"></a>第二步docker镜像并且启动</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash"><br>docker run -dit \<br>   -v <span class="hljs-variable">$PWD</span>/ql/config:/ql/config \<br>   -v <span class="hljs-variable">$PWD</span>/ql/log:/ql/log \<br>   -v <span class="hljs-variable">$PWD</span>/ql/db:/ql/db \<br>   -v <span class="hljs-variable">$PWD</span>/ql/scripts:/ql/scripts \<br>   -p 5700:5700 \<br>   --name qinglong \<br>   --hostname qinglong \<br>   --restart always \<br>   whyour/qinglong:latest<br><br></code></pre></td></tr></table></figure><h4 id="第三步安装依赖"><a href="#第三步安装依赖" class="headerlink" title="第三步安装依赖"></a>第三步安装依赖</h4><h5 id="node中"><a href="#node中" class="headerlink" title="node中"></a>node中</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash">crypto-js <br>prettytable<br>dotenv  <br>jsdom<br>date-fns  <br>tough-cookie  <br>tslib<br>ws@7.4.3  <br>ts-md5  <br>jsdom -g <br>jieba  <br>fs<br>form-data  <br>json5 <br>global-agent <br>png-js <br>@types/node  <br>require<br>typescript  <br>js-base64 <br>axios  <br>moment<br></code></pre></td></tr></table></figure><h5 id="Python3中"><a href="#Python3中" class="headerlink" title="Python3中"></a>Python3中</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">requests<br>canvas  <br>ping3<br>jieba<br></code></pre></td></tr></table></figure><h5 id="Linux下"><a href="#Linux下" class="headerlink" title="Linux下"></a>Linux下</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">bizCode<br>bizMsg  <br>lxml<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>jetbrains账号提取以及授权</title>
+    <link href="/2023/01/04/jetbrains/"/>
+    <url>/2023/01/04/jetbrains/</url>
+    
+    <content type="html"><![CDATA[<h3 id="打开地址"><a href="#打开地址" class="headerlink" title="打开地址"></a>打开地址</h3><p><a href="https://www.jetbrains.com/shop/eform/students">https://www.jetbrains.com/shop/eform/students</a></p><h3 id="登录github账号-并且授权"><a href="#登录github账号-并且授权" class="headerlink" title="登录github账号 并且授权"></a>登录github账号 并且授权</h3><p><img src="https://s2.loli.net/2023/01/04/RDwPnzx8bkAurBH.png" alt="1.png"></p><p><img src="https://s2.loli.net/2023/01/04/dvPc3UBio96fy5L.png" alt="2.png"></p><p><img src="https://s2.loli.net/2023/01/04/obwLp5gZvd4jhrG.png" alt="3.png"></p><h3 id="填写名称，并将激活邮件发送到对应邮箱"><a href="#填写名称，并将激活邮件发送到对应邮箱" class="headerlink" title="填写名称，并将激活邮件发送到对应邮箱"></a>填写名称，并将激活邮件发送到对应邮箱</h3><p><img src="https://s2.loli.net/2023/01/04/6vUCdsKntHjx28A.png" alt="4.png"></p><p><img src="https://s2.loli.net/2023/01/04/gocNSOzbWnTUaLG.png" alt="5.png"></p><p><img src="https://s2.loli.net/2023/01/04/9YOiftWQdKJqHnx.png" alt="6.png"></p><h3 id="打开jetbrans官网，并且登录自己账号"><a href="#打开jetbrans官网，并且登录自己账号" class="headerlink" title="打开jetbrans官网，并且登录自己账号"></a>打开jetbrans官网，并且登录自己账号</h3><p><a href="https://www.jetbrains.com/">https://www.jetbrains.com/</a></p><p>登录账号之后，再将激活链接复制到浏览器中，并且同意协议激活到自己账号中</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>创建ROOT用户,并且修改密码</title>
+    <link href="/2023/01/04/newRoot/"/>
+    <url>/2023/01/04/newRoot/</url>
+    
+    <content type="html"><![CDATA[<h4 id="启用root用户，并且密码改为a123654-（自定义）"><a href="#启用root用户，并且密码改为a123654-（自定义）" class="headerlink" title="启用root用户，并且密码改为a123654  （自定义）"></a>启用root用户，并且密码改为a123654  （自定义）</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> root:a123654 |sudo chpasswd root<br>sudo sed -i <span class="hljs-string">&#x27;s/^.*PermitRootLogin.*/PermitRootLogin yes/g&#x27;</span> /etc/ssh/sshd_config;<br>sudo sed -i <span class="hljs-string">&#x27;s/^.*PasswordAuthentication.*/PasswordAuthentication yes/g&#x27;</span> /etc/ssh/sshd_config;<br>sudo reboot<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>docker常用命令</title>
+    <link href="/2023/01/04/dockerdoc/"/>
+    <url>/2023/01/04/dockerdoc/</url>
+    
+    <content type="html"><![CDATA[<h3 id="常用docker命令"><a href="#常用docker命令" class="headerlink" title="常用docker命令"></a>常用docker命令</h3><h4 id="列出所有的容器-ID"><a href="#列出所有的容器-ID" class="headerlink" title="列出所有的容器 ID"></a>列出所有的容器 ID</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker ps -aq<br></code></pre></td></tr></table></figure><h4 id="删除所有镜像"><a href="#删除所有镜像" class="headerlink" title="删除所有镜像"></a>删除所有镜像</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker rmi $(docker images -q)<br></code></pre></td></tr></table></figure><h4 id="停止所有容器运行"><a href="#停止所有容器运行" class="headerlink" title="停止所有容器运行"></a>停止所有容器运行</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker stop $(docker ps -a -q)<br></code></pre></td></tr></table></figure><h4 id="删除所有停止运行的容器："><a href="#删除所有停止运行的容器：" class="headerlink" title="删除所有停止运行的容器："></a>删除所有停止运行的容器：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker <span class="hljs-built_in">rm</span> $(docker ps -a -q)<br><br></code></pre></td></tr></table></figure><h4 id="停止容器"><a href="#停止容器" class="headerlink" title="停止容器"></a>停止容器</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker stop cotianername/containerid<br> <br></code></pre></td></tr></table></figure><h4 id="启动容器"><a href="#启动容器" class="headerlink" title="启动容器"></a>启动容器</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker start cotianername/containerid<br> <br></code></pre></td></tr></table></figure><h4 id="删除容器"><a href="#删除容器" class="headerlink" title="删除容器"></a>删除容器</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><br>docker <span class="hljs-built_in">rm</span> cotianername/containerid<br> <br></code></pre></td></tr></table></figure><h4 id="进入容器"><a href="#进入容器" class="headerlink" title="进入容器"></a>进入容器</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><br>docker <span class="hljs-built_in">exec</span> -it containername/containerid /bin/bash<br> <br></code></pre></td></tr></table></figure><h4 id="启动所有容器"><a href="#启动所有容器" class="headerlink" title="启动所有容器"></a>启动所有容器</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><br>docker start $(docker ps -a | awk <span class="hljs-string">&#x27;&#123; print $1&#125;&#x27;</span> | <span class="hljs-built_in">tail</span> -n +2)<br> <br></code></pre></td></tr></table></figure><h4 id="列出所有镜像"><a href="#列出所有镜像" class="headerlink" title="列出所有镜像"></a>列出所有镜像</h4><p>运行简单的命令</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><br>docker images -a <br><br>docker images<br><br></code></pre></td></tr></table></figure><h4 id="删除哪个镜像，然后执行简单命令"><a href="#删除哪个镜像，然后执行简单命令" class="headerlink" title="删除哪个镜像，然后执行简单命令"></a>删除哪个镜像，然后执行简单命令</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><br>docker rmi &lt;your-image-id&gt;<br><br></code></pre></td></tr></table></figure><h4 id="一次删除多张镜像"><a href="#一次删除多张镜像" class="headerlink" title="一次删除多张镜像"></a>一次删除多张镜像</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><br>docker rmi &lt;your-image-id&gt; &lt;your-image-id&gt; ...<br> <br></code></pre></td></tr></table></figure><h4 id="一次删除所有镜像"><a href="#一次删除所有镜像" class="headerlink" title="一次删除所有镜像"></a>一次删除所有镜像</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><br>docker rmi $(docker images -q)<br> <br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>订阅转换地址搭建</title>
+    <link href="/2023/01/04/subscription/"/>
+    <url>/2023/01/04/subscription/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>谷歌反向代理搭建</title>
+    <link href="/2023/01/04/googleproxy/"/>
+    <url>/2023/01/04/googleproxy/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>email批量登录</title>
     <link href="/2022/12/14/email/"/>
     <url>/2022/12/14/email/</url>
