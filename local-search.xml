@@ -4,11 +4,50 @@
   
   
   <entry>
-    <title>proxy</title>
+    <title>linux转换windows</title>
+    <link href="/2023/01/08/ddwindows/"/>
+    <url>/2023/01/08/ddwindows/</url>
+    
+    <content type="html"><![CDATA[<h3 id="教程地址"><a href="#教程地址" class="headerlink" title="教程地址"></a>教程地址</h3><h3 id="国外"><a href="#国外" class="headerlink" title="国外"></a>国外</h3><p><a href="https://sunpma.com/137.html">https://sunpma.com/137.html</a></p><h3 id="国内"><a href="#国内" class="headerlink" title="国内"></a>国内</h3><p><a href="https://moe.best/tutorial/dd-win-vicer.html">https://moe.best/tutorial/dd-win-vicer.html</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>tgproxy搭建</title>
+    <link href="/2023/01/08/tgproxy/"/>
+    <url>/2023/01/08/tgproxy/</url>
+    
+    <content type="html"><![CDATA[<h3 id="一键搭建命令"><a href="#一键搭建命令" class="headerlink" title="一键搭建命令"></a>一键搭建命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><br>wget -N --no-check-certificate https://github.com/whunt1/onekeymakemtg/raw/master/mtproxy_go.sh &amp;&amp; <span class="hljs-built_in">chmod</span> +x mtproxy_go.sh &amp;&amp; bash mtproxy_go.sh<br><br><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>speedtest代理速度测试</title>
+    <link href="/2023/01/08/speedtest/"/>
+    <url>/2023/01/08/speedtest/</url>
+    
+    <content type="html"><![CDATA[<h4 id="代理速度测试"><a href="#代理速度测试" class="headerlink" title="代理速度测试"></a>代理速度测试</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><br>wget -qO- --no-check-certificate https://raw.githubusercontent.com/oooldking/script/master/superbench.sh | bash<br><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>各种代理搭建</title>
     <link href="/2023/01/08/proxy/"/>
     <url>/2023/01/08/proxy/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h3 id="SS"><a href="#SS" class="headerlink" title="SS"></a>SS</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">bash &lt;(curl -sL https://raw.githubusercontent.com/hijkpw/scripts/master/centos_install_ss.sh)<br></code></pre></td></tr></table></figure><h3 id="SSR"><a href="#SSR" class="headerlink" title="SSR"></a>SSR</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssr.sh &amp;&amp; <span class="hljs-built_in">chmod</span> +x ssr.sh &amp;&amp; sudo bash ssr.sh<br></code></pre></td></tr></table></figure><h4 id="BBR加速"><a href="#BBR加速" class="headerlink" title="BBR加速"></a>BBR加速</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh<br><span class="hljs-built_in">chmod</span> +x bbr.sh<br>./bbr.sh<br><br></code></pre></td></tr></table></figure><p>或者</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">yum install wget -y &amp;&amp; wget https://raw.githubusercontent.com/Toxic-Cat/Airport-toolkit/master/ssr_node_c7.sh &amp;&amp; <span class="hljs-built_in">chmod</span> +x ssr_node_c7.sh &amp;&amp; ./ssr_node_c7.sh<br><br></code></pre></td></tr></table></figure><h3 id="V2ray"><a href="#V2ray" class="headerlink" title="V2ray"></a>V2ray</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">bash &lt;(curl -s -L https://git.io/v2ray.sh)<br><br>wget -N --no-check-certificate -q -O install.sh <span class="hljs-string">&quot;https://raw.githubusercontent.com/wulabing/V2Ray_ws-tls_bash_onekey/master/install.sh&quot;</span> &amp;&amp; <span class="hljs-built_in">chmod</span> +x install.sh &amp;&amp; bash install.sh<br><br></code></pre></td></tr></table></figure><p>或者：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><br>curl -L https://raw.githubusercontent.com/snail007/proxy_admin_free/master/install_auto.sh | bash<br><br></code></pre></td></tr></table></figure>]]></content>
     
     
     
